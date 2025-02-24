@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <title>Lab 4</title>
+    <head>
+        <link rel="stylesheet" href="lab4styles.css">
+    </head>
+    <body>
+        <h1 id="title"></h1>
+        <br>
+        <section>
+            <form action="/action_page.php">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <input onclick="alertFunction()" type="submit" value="Alert Me!">
+            </form>
+        </section>
+        <section>
+            <form action="/action_page.php">
+                <input onclick="pageColor()" type="button" value="Change Color">
+            </form>
+        </section>
+        <section>
+            <form action="/action_page.php">
+                <label for="text">Text Tester:</label>
+                <input type="text" id="text" name="text">
+                <input onclick="hasSpecial()" type="submit" value="Validate Text">
+            </form>
+        </section>
+        <section>
+            <form action="/action_page.php">
+                <input onclick="addHeader()" type="button" value="Add Text">
+            </form>
+        </section>
+
+        <script>
+            const input = document.getElementById('name');
+            const input2 = document.getElementById('text');
+            var validation = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+            var title = document.getElementById('title');
+            let isBackgroundGreen = true;
+
+            function alertFunction() {
+                alert("Hello " + input.value + "!");
+            }
+            function hasSpecial() {
+                if(validation.test(input2.value)) {
+                    alert("There is a special character!");
+                }
+            }
+            function pageColor() {
+                if(isBackgroundGreen) {
+                    document.body.style.backgroundColor = "red";
+                    isBackgroundGreen = false;
+                } else {
+                    document.body.style.backgroundColor = "green";
+                    isBackgroundGreen = true;
+                }
+            }
+            function addHeader() {
+                title.innerHTML = "Add Text";
+            }
+        </script>
+    </body>
+</html>
