@@ -1,0 +1,15 @@
+section {
+    color: black;
+    border: thick solid #111111;
+    margin: 10px;
+    padding: 10px;
+}
+body {
+    font-family:Arial, Helvetica, sans-serif;
+    color: black;
+    background-color: green;
+    margin: auto;
+    padding: 10px;
+    height: 100%;
+    text-align: center;
+}
